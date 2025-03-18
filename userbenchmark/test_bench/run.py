@@ -361,6 +361,10 @@ def run(args: List[str]):
         if not args.models:
             args.models = set(list_models(internal=(not args.oss)))
 
+        print("*********************")
+        print(args.device)
+        print(list_devices())
+        print("*********************")
         devices = validate(parse_str_to_list(args.device), list_devices())
         tests = validate(parse_str_to_list(args.test), list_tests())
         batch_sizes = parse_str_to_list(args.bs)
